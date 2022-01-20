@@ -34,15 +34,4 @@ end
 
 include("MOI_wrapper/MOI_wrapper.jl")
 
-function __init__()
-    libecos_version = VersionNumber(unsafe_string(ECOS_ver()))
-    if libecos_version != v"2.0.8"
-        error(
-            "Current ECOS version installed is $(libecos_version), but we " *
-            "require version 2.0.8",
-        )
-    end
-    return
-end
-
 end # module
